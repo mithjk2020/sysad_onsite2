@@ -1,0 +1,14 @@
+[Unit]
+Description=Docker Monitor Daemon
+
+[Service]
+ExecStart=/usr/local/bin/docker-monitor.sh
+Restart=always
+User=mithra
+Group=mithra
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=docker-monitor
+
+[Install]
+WantedBy=multi-user.target
